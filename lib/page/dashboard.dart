@@ -11,62 +11,25 @@ class DashboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final DashboardController dashboardController =
-        Get.put(DashboardController());
+    final DashboardController dashboardController = Get.find();
     final List<Widget> menus = [HomeMenu(), QrisMenu(), ProfileMenu()];
-
     return Obx(
       () {
         return Scaffold(
           body: menus[dashboardController.selectedIndex.value],
-          bottomNavigationBar: BottomAppBar(
-            color: Colors.white,
-            shape: CircularNotchedRectangle(),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                IconButton(
-                  icon: Icon(
-                    Icons.home,
-                    color: dashboardController.selectedIndex.value == 0
-                        ? textColor
-                        : secondaryColor,
-                  ),
-                  onPressed: () => dashboardController.changeMenu(0),
-                ),
-                SizedBox(width: 48),
-                IconButton(
-                  icon: Icon(
-                    Icons.person,
-                    color: dashboardController.selectedIndex.value == 2
-                        ? textColor
-                        : secondaryColor,
-                  ),
-                  onPressed: () => dashboardController.changeMenu(2),
-                ),
-              ],
-            ),
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: dashboardController.selectedIndex.value,
+            selectedItemColor: textColor,
+            unselectedItemColor: secondaryColor,
+            onTap: dashboardController.changeMenu,
+            items: [
+              BottomNavigationBarItem(icon: (Icon(Icons.home)), label: "home"),
+              BottomNavigationBarItem(
+                  icon: (Icon(Icons.qr_code_2)), label: "Qris"),
+              BottomNavigationBarItem(
+                  icon: (Icon(Icons.person)), label: "Profile"),
+            ],
           ),
-          floatingActionButton: Container(
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
-              color: tresierColor,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: InkWell(
-              onTap: () => dashboardController.changeMenu(1),
-              child: Center(
-                child: Icon(
-                  Icons.qr_code,
-                  size: 28,
-                  color: textColor,
-                ),
-              ),
-            ),
-          ),
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerDocked,
         );
       },
     );

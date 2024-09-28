@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:kaiecash/page/controller/dashboard_controller.dart';
 import 'package:kaiecash/page/menus/home.dart';
 
 class QrisMenu extends StatefulWidget {
@@ -13,6 +14,7 @@ class QrisMenu extends StatefulWidget {
 }
 
 class _QrisMenuState extends State<QrisMenu> {
+  final DashboardController dashboardController = Get.find();
   final ImagePicker _picker = ImagePicker();
   File? _image;
 
@@ -25,7 +27,17 @@ class _QrisMenuState extends State<QrisMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Camera Example')),
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            dashboardController.selectedIndex.value = 0;
+          },
+        ),
+      ),
+      body: Center(
+        child: Text("Camera"),
+      ),
     );
   }
 

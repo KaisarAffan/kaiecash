@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kaiecash/Bindings/bindings.dart';
 import 'package:kaiecash/page/dashboard.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: () => DashboardPage()),
+        GetPage(name: '/', page: () => DashboardPage(), binding: MyBindings()),
       ],
     );
   }

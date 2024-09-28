@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:kaiecash/Widget/balance_card.dart';
 import 'package:kaiecash/Widget/colors.dart';
-import 'package:kaiecash/Widget/menu_button.dart';
+import 'package:kaiecash/Widget/my_button.dart';
+import 'package:kaiecash/Widget/promo.dart';
 
 class HomeMenu extends StatefulWidget {
   const HomeMenu({super.key});
@@ -10,36 +12,28 @@ class HomeMenu extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomeMenu> {
-  List<Widget> myItems = List.generate(
-    10,
-    (index) => Container(
-      decoration: BoxDecoration(
-        color: Colors.blueAccent,
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: Center(
-        child: Text(
-          'Item $index',
-          style: TextStyle(fontSize: 24, color: Colors.white),
-        ),
-      ),
-    ),
-  );
+  bool _isVisible = false;
+
+  void _toggleVisibility() {
+    setState(() {
+      _isVisible = !_isVisible;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryColor,
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(20, 45, 0, 0),
+              padding: const EdgeInsets.fromLTRB(20, 82, 0, 26),
               child: Row(
                 children: [
                   Container(
-                    width: 50,
-                    height: 50,
+                    width: 40,
+                    height: 40,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
                       image: DecorationImage(
@@ -48,32 +42,27 @@ class _HomePageState extends State<HomeMenu> {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    "Kaisar Affan Danendra",
-                  )
+                  SizedBox(width: 10),
+                  Text("Kaisar Affan Danendra"),
                 ],
               ),
             ),
-            SizedBox(
-              height: 10,
+            BalanceCard(
+              rekening: "0821 3727 8751",
+              saldo: "Rp.700.000",
+              isVisible: _isVisible,
+              onToggleVisibility: _toggleVisibility,
             ),
-            Container(
-              decoration: BoxDecoration(
-                  color: secondaryColor,
-                  borderRadius: BorderRadius.circular(20)),
-            ),
+            SizedBox(height: 26),
             Container(
               decoration: BoxDecoration(
                 color: secondaryColor,
                 borderRadius: BorderRadius.circular(20),
               ),
-              height: 100,
-              width: 300,
+              height: 80,
+              width: 326,
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
+                padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -94,6 +83,35 @@ class _HomePageState extends State<HomeMenu> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 15,
+            ),
+            MyButton(
+              buttonText: "History",
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: secondaryColor,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              height: 92,
+              width: 326,
+            ),
+            SizedBox(height: 20),
+            RowPromo(
+              lengthIndex: 2,
+              skipIndex: 0,
+            ),
+            SizedBox(
+              height: 12,
+            ),
+            RowPromo(
+              lengthIndex: 2,
+              skipIndex: 2,
+            )
           ],
         ),
       ),

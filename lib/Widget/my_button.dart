@@ -25,16 +25,18 @@ class MyButton extends StatelessWidget {
 class MenuButton extends StatelessWidget {
   final String image;
   final String text;
+  final VoidCallback onTap;
   const MenuButton({
     super.key,
     required this.image,
     required this.text,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {},
+        onTap: onTap,
         child: Column(
           children: [
             Container(

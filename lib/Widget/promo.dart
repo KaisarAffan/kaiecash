@@ -17,47 +17,29 @@ class MyPromo extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Container(
       width: 150,
-      height: 240,
+      height: 160,
       decoration: BoxDecoration(
-          color: tresierColor, borderRadius: BorderRadius.circular(18)),
+          color: secondaryColor, borderRadius: BorderRadius.circular(18)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             height: 130,
             decoration: BoxDecoration(
-                color: primaryColor,
-                borderRadius: BorderRadius.circular(12),
-                image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage("asset/${promo['image']}"))),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 15),
-            child: Text(
-              promo['place'],
+              color: primaryColor,
+              borderRadius: BorderRadius.circular(12),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage("asset/${promo['image']}"),
+              ),
             ),
           ),
           SizedBox(
-            height: 5,
+            height: 2,
           ),
           Padding(
-            padding: EdgeInsets.only(left: 15),
-            child: Text(
-              promo['destination'],
-            ),
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 15),
-            child: Text(
-              "\$${promo['price']}/night",
-            ),
+            padding: const EdgeInsets.only(left: 10),
+            child: Text(promo['judul']),
           )
         ],
       ),
@@ -85,6 +67,27 @@ class RowPromo extends StatelessWidget {
               },
               child: MyPromo(promo: singlePromo)))
           .toList(),
+    );
+  }
+}
+
+class PromoBener extends StatelessWidget {
+  const PromoBener({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        decoration: BoxDecoration(
+            color: secondaryColor,
+            borderRadius: BorderRadius.circular(20),
+            image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage("asset/${promo[0]['image']}"))),
+        height: 92,
+        width: 326,
+      ),
     );
   }
 }

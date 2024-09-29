@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:kaiecash/Widget/ComponentPage/payment_page.dart';
 import 'package:kaiecash/Widget/balance_card.dart';
 import 'package:kaiecash/Widget/colors.dart';
 import 'package:kaiecash/Widget/my_button.dart';
@@ -70,14 +72,23 @@ class _HomePageState extends State<HomeMenu> {
                     MenuButton(
                       image: 'asset/trima.svg',
                       text: "Top-up",
+                      onTap: () {
+                        Get.to(PaymentPage());
+                      },
                     ),
                     MenuButton(
                       image: 'asset/minta.svg',
                       text: "Minta",
+                      onTap: () {
+                        Get.to(PaymentPage());
+                      },
                     ),
                     MenuButton(
                       image: 'asset/bayar.svg',
                       text: "Bayar",
+                      onTap: () {
+                        Get.to(PaymentPage());
+                      },
                     ),
                   ],
                 ),
@@ -92,25 +103,18 @@ class _HomePageState extends State<HomeMenu> {
             SizedBox(
               height: 15,
             ),
-            Container(
-              decoration: BoxDecoration(
-                color: secondaryColor,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              height: 92,
-              width: 326,
-            ),
+            PromoBener(),
             SizedBox(height: 20),
             RowPromo(
               lengthIndex: 2,
-              skipIndex: 0,
+              skipIndex: 1,
             ),
             SizedBox(
               height: 12,
             ),
             RowPromo(
               lengthIndex: 2,
-              skipIndex: 2,
+              skipIndex: 3,
             )
           ],
         ),

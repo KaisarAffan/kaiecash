@@ -27,7 +27,7 @@ class MyAppPage {
     ),
     GetPage(
       name: AppRoutes.paymentPage,
-      page: () => PaymentPage(),
+      page: () => PaymentPage(method: "bayar",saldo: 90,),
     ),
   ];
 }

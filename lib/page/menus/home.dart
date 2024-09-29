@@ -5,6 +5,7 @@ import 'package:kaiecash/Widget/balance_card.dart';
 import 'package:kaiecash/Widget/colors.dart';
 import 'package:kaiecash/Widget/my_button.dart';
 import 'package:kaiecash/Widget/promo.dart';
+import 'package:kaiecash/page/menus/logic/saldo.dart';
 
 class HomeMenu extends StatefulWidget {
   const HomeMenu({super.key});
@@ -51,7 +52,7 @@ class _HomePageState extends State<HomeMenu> {
             ),
             BalanceCard(
               rekening: "0821 3727 8751",
-              saldo: "Rp.700.000",
+              saldo: formatToCurrency(saldo),
               isVisible: _isVisible,
               onToggleVisibility: _toggleVisibility,
             ),
@@ -73,21 +74,31 @@ class _HomePageState extends State<HomeMenu> {
                       image: 'asset/trima.svg',
                       text: "Top-up",
                       onTap: () {
-                        Get.to(PaymentPage());
+                        Get.to(() => PaymentPage(
+                              method:
+                                  "Top-up", // Passing the method to PaymentPage
+                              saldo: saldo, // Pass current saldo
+                            ));
                       },
                     ),
                     MenuButton(
                       image: 'asset/minta.svg',
                       text: "Minta",
                       onTap: () {
-                        Get.to(PaymentPage());
+                        Get.to(() => PaymentPage(
+                              method: "Minta",
+                              saldo: saldo,
+                            ));
                       },
                     ),
                     MenuButton(
                       image: 'asset/bayar.svg',
                       text: "Bayar",
                       onTap: () {
-                        Get.to(PaymentPage());
+                        Get.to(() => PaymentPage(
+                              method: "Bayar",
+                              saldo: saldo,
+                            ));
                       },
                     ),
                   ],
@@ -98,7 +109,9 @@ class _HomePageState extends State<HomeMenu> {
               height: 15,
             ),
             MyButton(
+              size: Size(130, 30),
               buttonText: "History",
+              onTap: () {},
             ),
             SizedBox(
               height: 15,

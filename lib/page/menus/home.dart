@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kaiecash/Widget/ComponentPage/payment_page.dart';
 import 'package:kaiecash/Widget/balance_card.dart';
 import 'package:kaiecash/Widget/colors.dart';
 import 'package:kaiecash/Widget/my_button.dart';
 import 'package:kaiecash/Widget/promo.dart';
+import 'package:kaiecash/page/controller/payment_controller.dart';
+import 'package:kaiecash/page/menus/logic/saldo.dart';
 
 class HomeMenu extends StatefulWidget {
   const HomeMenu({super.key});
@@ -15,6 +16,7 @@ class HomeMenu extends StatefulWidget {
 
 class _HomePageState extends State<HomeMenu> {
   bool _isVisible = false;
+  final PaymentController paymentController = Get.find();
 
   void _toggleVisibility() {
     setState(() {
@@ -49,11 +51,13 @@ class _HomePageState extends State<HomeMenu> {
                 ],
               ),
             ),
-            BalanceCard(
-              rekening: "0821 3727 8751",
-              saldo: "Rp.700.000",
-              isVisible: _isVisible,
-              onToggleVisibility: _toggleVisibility,
+            Obx(
+              () => BalanceCard(
+                rekening: "0821 3727 8751",
+                saldo: formatToCurrency(paymentController.saldo.value),
+                isVisible: _isVisible,
+                onToggleVisibility: _toggleVisibility,
+              ),
             ),
             SizedBox(height: 26),
             Container(
@@ -73,49 +77,48 @@ class _HomePageState extends State<HomeMenu> {
                       image: 'asset/trima.svg',
                       text: "Top-up",
                       onTap: () {
-                        Get.to(PaymentPage());
+                        paymentController.goToPayment(
+                            "Top-up", paymentController.saldo.value);
                       },
                     ),
                     MenuButton(
                       image: 'asset/minta.svg',
                       text: "Minta",
                       onTap: () {
-                        Get.to(PaymentPage());
+                        paymentController.goToPayment(
+                            "Minta", paymentController.saldo.value);
                       },
                     ),
                     MenuButton(
                       image: 'asset/bayar.svg',
                       text: "Bayar",
                       onTap: () {
-                        Get.to(PaymentPage());
+                        paymentController.goToPayment(
+                            "Bayar", paymentController.saldo.value);
                       },
                     ),
                   ],
                 ),
               ),
             ),
-            SizedBox(
-              height: 15,
-            ),
+            SizedBox(height: 15),
             MyButton(
+              size: Size(130, 30),
               buttonText: "History",
+              onPressed: () {}, // Add your logic here
             ),
-            SizedBox(
-              height: 15,
-            ),
+            SizedBox(height: 15),
             PromoBener(),
             SizedBox(height: 20),
             RowPromo(
               lengthIndex: 2,
               skipIndex: 1,
             ),
-            SizedBox(
-              height: 12,
-            ),
+            SizedBox(height: 12),
             RowPromo(
               lengthIndex: 2,
               skipIndex: 3,
-            )
+            ),
           ],
         ),
       ),

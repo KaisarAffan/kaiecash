@@ -4,15 +4,22 @@ import 'package:kaiecash/Widget/colors.dart';
 
 class MyButton extends StatelessWidget {
   final String buttonText;
-  const MyButton({super.key, required this.buttonText});
+  final VoidCallback onPressed;
+  final Size size;
+  const MyButton({
+    super.key,
+    required this.buttonText,
+    required this.size,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: secondaryColor,
-          minimumSize: Size(130, 30),
+          minimumSize: size,
         ),
         child: Text(
           buttonText,

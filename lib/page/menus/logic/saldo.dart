@@ -1,21 +1,3 @@
-int saldo = 700000;
-bool visiblity = false;
-
-void Payment(String method, int input) {
-  switch (method) {
-    case "Bayar":
-      saldo -= input; // Deduct the input from saldo
-      break;
-    case "Top-up":
-      saldo += input; // Add the input to saldo
-      visiblity = true;
-      break;
-    case "Minta":
-      visiblity = true; // Just set visibility to true for Minta
-      break;
-  }
-}
-
 String formatToCurrency(int amount) {
   String amountString = amount.toString();
   StringBuffer result = StringBuffer();

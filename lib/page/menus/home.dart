@@ -6,6 +6,7 @@ import 'package:kaiecash/Widget/my_button.dart';
 import 'package:kaiecash/Widget/promo.dart';
 import 'package:kaiecash/page/controller/payment_controller.dart';
 import 'package:kaiecash/page/menus/logic/saldo.dart';
+import 'package:kaiecash/utils/route.dart';
 
 class HomeMenu extends StatefulWidget {
   const HomeMenu({super.key});
@@ -105,7 +106,9 @@ class _HomePageState extends State<HomeMenu> {
             MyButton(
               size: Size(130, 30),
               buttonText: "History",
-              onPressed: () {}, // Add your logic here
+              onPressed: () {
+                Get.toNamed(AppRoutes.historyPage);
+              },
             ),
             SizedBox(height: 15),
             PromoBener(),

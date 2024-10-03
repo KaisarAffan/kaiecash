@@ -4,6 +4,7 @@ import 'package:kaiecash/page/dashboard.dart';
 import 'package:kaiecash/page/menus/home.dart';
 import 'package:kaiecash/page/menus/profile.dart';
 import 'package:kaiecash/page/menus/qris.dart';
+import 'package:kaiecash/page/my_history.dart';
 import 'package:kaiecash/utils/route.dart';
 
 class MyAppPage {
@@ -13,9 +14,9 @@ class MyAppPage {
         page: () => DashboardPage(),
         binding: MyBindings()),
     GetPage(
-        name: AppRoutes.homePage,
-        page: () => HomeMenu(),
-),
+      name: AppRoutes.homePage,
+      page: () => HomeMenu(),
+    ),
     GetPage(
       name: AppRoutes.profilePage,
       page: () => ProfileMenu(),
@@ -23,6 +24,10 @@ class MyAppPage {
     GetPage(
       name: AppRoutes.qrisPage,
       page: () => QrisMenu(),
+    ),
+    GetPage(
+      name: AppRoutes.historyPage,
+      page: () => ListHistory(),
     ),
   ];
 }

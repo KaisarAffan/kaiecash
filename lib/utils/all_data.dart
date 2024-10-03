@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 List<Map<String, dynamic>> promo = [
   {
     'image': 'discountbaner.png',
@@ -53,5 +55,13 @@ List<Map<String, dynamic>> promo = [
       'hotel_room_view_2.png',
       'hotel_room_view_3.png',
     ]
+  },
+];
+
+List<Map<String, dynamic>> history = [
+  {
+    'icons': Icon(Icons.arrow_upward),
+    'status': 'outcome',
+    'amount': '100.000',
   },
 ];

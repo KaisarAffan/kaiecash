@@ -4,6 +4,7 @@ import 'package:kaiecash/Widget/balance_card.dart';
 import 'package:kaiecash/Widget/colors.dart';
 import 'package:kaiecash/Widget/my_button.dart';
 import 'package:kaiecash/Widget/promo.dart';
+import 'package:kaiecash/page/Component%20Page/promo_details.dart';
 import 'package:kaiecash/page/controller/payment_controller.dart';
 import 'package:kaiecash/page/menus/logic/saldo.dart';
 import 'package:kaiecash/utils/route.dart';
@@ -75,28 +76,28 @@ class _HomePageState extends State<HomeMenu> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     MenuButton(
-                      image: 'asset/trima.svg',
-                      text: "Top-up",
-                      onTap: () {
-                        paymentController.goToPayment(
-                            "Top-up", paymentController.saldo.value);
-                      },
-                    ),
-                    MenuButton(
-                      image: 'asset/minta.svg',
                       text: "Minta",
                       onTap: () {
                         paymentController.goToPayment(
                             "Minta", paymentController.saldo.value);
                       },
+                      icons: Icons.arrow_downward,
                     ),
                     MenuButton(
-                      image: 'asset/bayar.svg',
+                      text: "Top-up",
+                      onTap: () {
+                        paymentController.goToPayment(
+                            "Top-up", paymentController.saldo.value);
+                      },
+                      icons: Icons.control_point,
+                    ),
+                    MenuButton(
                       text: "Bayar",
                       onTap: () {
                         paymentController.goToPayment(
                             "Bayar", paymentController.saldo.value);
                       },
+                      icons: Icons.arrow_upward,
                     ),
                   ],
                 ),
@@ -111,7 +112,13 @@ class _HomePageState extends State<HomeMenu> {
               },
             ),
             SizedBox(height: 15),
-            PromoBener(),
+            PromoBener(
+              onTap: () {
+                Get.to(() => PromoDetails(), arguments: {
+                  'index': 0,
+                });
+              },
+            ),
             SizedBox(height: 20),
             RowPromo(
               lengthIndex: 2,

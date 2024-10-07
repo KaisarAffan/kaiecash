@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:kaiecash/Widget/colors.dart';
 
 class MyButton extends StatelessWidget {
@@ -30,14 +29,14 @@ class MyButton extends StatelessWidget {
 }
 
 class MenuButton extends StatelessWidget {
-  final String image;
+  final IconData icons;
   final String text;
   final VoidCallback onTap;
   const MenuButton({
     super.key,
-    required this.image,
     required this.text,
     required this.onTap,
+    required this.icons,
   });
 
   @override
@@ -53,11 +52,7 @@ class MenuButton extends StatelessWidget {
                   color: tresierColor,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: SvgPicture.asset(
-                  image,
-                  height: 25,
-                  width: 25,
-                )),
+                child: Icon(icons)),
             Text(
               text,
               style: TextStyle(fontSize: 10),

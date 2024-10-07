@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kaiecash/Widget/my_button.dart';
+import 'package:kaiecash/Widget/my_dropdown.dart';
 import 'package:kaiecash/page/controller/payment_controller.dart';
 
-class PaymentPage extends StatelessWidget {
+class PaymentPage extends StatefulWidget {
+  const PaymentPage({super.key});
+
+  @override
+  _PaymentPageState createState() => _PaymentPageState();
+}
+
+class _PaymentPageState extends State<PaymentPage> {
   final PaymentController paymentController = Get.find();
   final TextEditingController textEditingController = TextEditingController();
-
-  PaymentPage({
-    super.key,
-  });
+  String? selectedValue;
 
   @override
   Widget build(BuildContext context) {
-    final String method =
-        Get.arguments['method']; // Get the method from the argument
+    final String method = Get.arguments['method'];
+    final List<Map<String, dynamic>> dropdownItems =
+        Get.arguments['dropdownItems'];
 
     return Scaffold(
       appBar: AppBar(
@@ -34,15 +40,7 @@ class PaymentPage extends StatelessWidget {
                 keyboardType: TextInputType.number,
               ),
             ),
-            Visibility(
-              visible: paymentController.visibility.value,
-              child: Container(
-                height: 100,
-                width: 100,
-                color: Colors.blue,
-                child: Text('Visible Widget'),
-              ),
-            ),
+            MyDropdown(dropdownItems: dropdownItems),
             Spacer(),
             Padding(
               padding: const EdgeInsets.only(bottom: 10.0),
@@ -56,8 +54,6 @@ class PaymentPage extends StatelessWidget {
                       paymentController.setBayar(value);
                     } else if (method == "Top-up") {
                       paymentController.setTopUp(value);
-                    } else if (method == "Minta") {
-                      paymentController.setMinta(value);
                     }
                     Get.back();
                   } else {
@@ -70,5 +66,11 @@ class PaymentPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    textEditingController.dispose();
+    super.dispose();
   }
 }

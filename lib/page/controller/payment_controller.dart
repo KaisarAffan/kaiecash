@@ -1,9 +1,10 @@
 import 'package:get/get.dart';
-import 'package:kaiecash/Widget/ComponentPage/payment_page.dart';
+import 'package:kaiecash/page/Component%20Page/payment_page.dart';
+import 'package:kaiecash/utils/all_data.dart';
 
 class PaymentController extends GetxController {
   var saldo = 700000.obs;
-  var visibility = false.obs;
+  late List<Map<String, dynamic>> dropdownItems;
 
   void setTopUp(int newValue) {
     saldo.value += newValue;
@@ -11,21 +12,17 @@ class PaymentController extends GetxController {
 
   void setBayar(int newValue) {
     saldo.value -= newValue;
-    visibility.value = true;
-  }
-
-  void setMinta(int newValue) {
-    visibility.value = true;
   }
 
   void goToPayment(String method, int saldo) {
     if (method == "Bayar" || method == "Minta") {
-      visibility.value = true;
-    } else {
-      visibility.value = false;
+      dropdownItems = dropdownItemsMintaBayar;
+    } else if (method == "Top-up") {
+      dropdownItems = dropdownItemsTopup;
     }
     Get.to(() => PaymentPage(), arguments: {
       'method': method,
+      'dropdownItems': dropdownItems,
     });
   }
 }

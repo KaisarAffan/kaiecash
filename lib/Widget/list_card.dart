@@ -7,30 +7,12 @@ class ListCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [
-          Icon(
-            modelHistory.icons.icon,
-            color: Colors.white,
-          ),
-          const SizedBox(width: 8),
-          Text(
-            modelHistory.status,
-            style: const TextStyle(
-              color: Colors.white,
-              fontFamily: 'MontserratSemi',
-            ),
-          ),
-          const SizedBox(width: 8),
-          Text(
-            modelHistory.amount,
-            style: const TextStyle(
-              color: Colors.white,
-              fontFamily: 'MontserratSemi',
-            ),
-          ),
-        ],
+    return Card(
+      child: ListTile(
+        leading: CircleAvatar(child: Text(modelHistory.initial)),
+        title: Text(modelHistory.amount),
+        subtitle: Text(modelHistory.status),
+        trailing: Icon(modelHistory.icons.icon),
       ),
     );
   }

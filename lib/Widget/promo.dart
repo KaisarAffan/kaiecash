@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kaiecash/Widget/colors.dart';
-import 'package:kaiecash/page/menus/home.dart';
+import 'package:kaiecash/page/Component%20Page/promo_details.dart';
 import 'package:kaiecash/utils/all_data.dart';
 
 class MyPromo extends StatelessWidget {
@@ -60,24 +60,32 @@ class RowPromo extends StatelessWidget {
       children: promo
           .skip(skipIndex)
           .take(lengthIndex)
-          .map((singlePromo) => GestureDetector(
+          .map(
+            (singlePromo) => GestureDetector(
               onTap: () {
                 var index = promo.indexOf(singlePromo);
-                Get.to(HomeMenu());
+                Get.to(() => PromoDetails(), arguments: {
+                  'index': index,
+                });
               },
-              child: MyPromo(promo: singlePromo)))
+              child: MyPromo(
+                promo: singlePromo,
+              ),
+            ),
+          )
           .toList(),
     );
   }
 }
 
 class PromoBener extends StatelessWidget {
-  const PromoBener({super.key});
+  final VoidCallback onTap;
+  const PromoBener({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
             color: secondaryColor,

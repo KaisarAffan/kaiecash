@@ -4,4 +4,5 @@ class AppRoutes {
   static const profilePage = "/profile";
   static const qrisPage = "/qris";
   static const paymentPage = "/payment_page";
+  static const historyPage = "/my_history";
 }

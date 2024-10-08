@@ -20,13 +20,13 @@ List<Map<String, dynamic>> promo = [
         'SUPER MEGA SALE Nama Event: SUPER MEGA SALE Tanggal: 29 Juni s/d 1 Juli 2022 Durasi: 3 Hari | Rabu, Kamis, Jumat Pukul: 10.00 s/d 18.00 WIB Tempat: MENARA JAMSOSTEKLokasi: Lantai Dasar Gedung Alamat: Jalan Jenderal Gatot Subroto No.39, Jakarta Kateogri Produk: Fasion, Apprreal, Handicraft, Hijab, Jewelery, Batik, Aksessoris, Kids wear, Home living, Tas, Sepatu, Multi produk, dan Kuliner, dan lainnya. Target market; +- 4.000an 2 Tower, Menara Utara dan Menara Selatan di MENARA JAMSOSTEK Bersebelahan langsung dengan Wisma Mulia, Gd TifaPartisipasi; 1. Perusaahaan 2. Perorangan Fasilitas: Meja 1pcs, Kursi 2pcs, Keamanan, Penerangan, Kebersihan, AC Central Informasi pemesanan: Mrs. Lina 0812-8007-9048',
   },
   {
-    'image': 'profile.jpg',
+    'image': 'discount4.png',
     'judul': 'special offer',
     'detail':
         'In one of UAE\'s business districts, 2 miles from the World Trade Center, this hotel offers a free shuttle to the beach and shopping malls.Holiday Inn Express Dubai’s rooms are decorated in sandy brown tones and fitted with deluxe bedding. The living area features a loose-back sofa and TV with access to multilingual channels.At Holiday Inn Dubai, the front desk is open throughout the day, and the attentive staff can organize outdoor excursions, including desert safaris.Guests can order light snacks and sandwiches at the Lobby bar. It offers music entertainment and a range of wines and draft beers. Warm drinks, smoothies and fruit drinks made from fresh ingredients are available. A hot buffet breakfast is served daily.Holiday Inn Express Dubai is a 20 minute drive from Dubai Airport. Set near Port Rashid Docks, it is a 10 minute drive from Dubai Maritime City, Dubai city center and Burj Khalifa.Couples in particular like the location – they rated it 9.4 for a four-person trip.',
   },
   {
-    'image': 'profile.jpg',
+    'image': 'discount5.png',
     'judul': 'special offer',
     'detail':
         'In one of UAE\'s business districts, 2 miles from the World Trade Center, this hotel offers a free shuttle to the beach and shopping malls.Holiday Inn Express Dubai’s rooms are decorated in sandy brown tones and fitted with deluxe bedding. The living area features a loose-back sofa and TV with access to multilingual channels.At Holiday Inn Dubai, the front desk is open throughout the day, and the attentive staff can organize outdoor excursions, including desert safaris.Guests can order light snacks and sandwiches at the Lobby bar. It offers music entertainment and a range of wines and draft beers. Warm drinks, smoothies and fruit drinks made from fresh ingredients are available. A hot buffet breakfast is served daily.Holiday Inn Express Dubai is a 20 minute drive from Dubai Airport. Set near Port Rashid Docks, it is a 10 minute drive from Dubai Maritime City, Dubai city center and Burj Khalifa.Couples in particular like the location – they rated it 9.4 for a four-person trip.',

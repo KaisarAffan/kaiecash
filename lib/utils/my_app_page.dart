@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:kaiecash/Bindings/bindings.dart';
+import 'package:kaiecash/page/Component%20Page/payment_page.dart';
 import 'package:kaiecash/page/MyListView.dart';
 import 'package:kaiecash/page/dashboard.dart';
 import 'package:kaiecash/page/menus/home.dart';
@@ -29,5 +30,9 @@ class MyAppPage {
       name: AppRoutes.historyPage,
       page: () => ListHistory(),
     ),
+    GetPage(
+        name: AppRoutes.paymentPage,
+        page: () => PaymentPage(),
+        binding: MyBindings()),
   ];
 }

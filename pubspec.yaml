@@ -58,6 +58,8 @@ flutter:
     - asset/profile.jpg
     - asset/discount2.png
     - asset/discount3.png
+    - asset/discount4.png
+    - asset/discount5.png
     - asset/discountbaner.png
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

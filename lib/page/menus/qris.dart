@@ -1,8 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kaiecash/Bindings/bindings.dart';
-import 'package:kaiecash/page/Component%20Page/payment_page.dart';
 import 'package:kaiecash/page/controller/payment_controller.dart';
 
 class QrisMenu extends StatelessWidget {

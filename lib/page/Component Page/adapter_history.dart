@@ -12,7 +12,10 @@ class AdapterListView extends StatelessWidget {
     return Container(
         margin: EdgeInsets.all(4),
         child: ListCard(
-          modelHistory: modelHistory,
+          leading: modelHistory.initial,
+          title: modelHistory.amount,
+          subtitle: modelHistory.status,
+          trailing: modelHistory.icons.icon,
         ));
   }
 }

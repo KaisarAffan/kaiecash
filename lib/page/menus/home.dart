@@ -34,7 +34,7 @@ class _HomePageState extends State<HomeMenu> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(20, 82, 0, 26),
+              padding: const EdgeInsets.fromLTRB(20, 50, 0, 26),
               child: Row(
                 children: [
                   Container(
@@ -98,6 +98,13 @@ class _HomePageState extends State<HomeMenu> {
                             "Bayar", paymentController.saldo.value);
                       },
                       icons: Icons.arrow_upward,
+                    ),
+                    MenuButton(
+                      text: "Favourite",
+                      onTap: () {
+                        Get.toNamed(AppRoutes.favouritePage);
+                      },
+                      icons: Icons.star_border,
                     ),
                   ],
                 ),

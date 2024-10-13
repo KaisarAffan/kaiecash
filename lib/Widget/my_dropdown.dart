@@ -27,10 +27,10 @@ class MyDropdown extends StatelessWidget {
                 child: Row(
                   children: [
                     if (item
-                        .containsKey('icon')) // Handle icons for Topup items
+                        .containsKey('icon')) 
                       Icon(item['icon']),
                     if (item.containsKey(
-                        'initial')) // Handle initials for MintaBayar items
+                        'initial')) 
                       CircleAvatar(
                         radius: 12,
                         child: Text(

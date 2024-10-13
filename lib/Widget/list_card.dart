@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:kaiecash/page/Models/history_model.dart';
 
 class ListCard extends StatelessWidget {
-  final ModelHistory modelHistory;
-  const ListCard({super.key, required this.modelHistory});
+  final String leading;
+  final String title;
+  final String subtitle;
+  final IconData? trailing;
+  const ListCard({
+    super.key,
+    required this.leading,
+    required this.title,
+    required this.subtitle,
+    required this.trailing,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        leading: CircleAvatar(child: Text(modelHistory.initial)),
-        title: Text(modelHistory.amount),
-        subtitle: Text(modelHistory.status),
-        trailing: Icon(modelHistory.icons.icon),
+        leading: CircleAvatar(child: Text(leading)),
+        title: Text(title),
+        subtitle: Text(subtitle),
+        trailing: Icon(trailing),
       ),
     );
   }

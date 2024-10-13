@@ -159,9 +159,4 @@ List<Map<String, dynamic>> dropdownItemsTopup = [
   {'value': 'mobile bank', 'icon': Icons.account_balance_sharp},
   {'value': 'minimarket', 'icon': Icons.store_mall_directory_sharp},
 ];
-List<Map<String, dynamic>> dropdownItemsMintaBayar = [
-  {'value': 'alif', 'initial': 'AF'},
-  {'value': 'mutia', 'initial': 'MA'},
-  {'value': 'pak teng', 'initial': 'PT'},
-  {'value': 'nina', 'initial': 'N'},
-];
+

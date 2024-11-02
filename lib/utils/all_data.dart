@@ -35,124 +35,180 @@ List<Map<String, dynamic>> promo = [
 
 List<Map<String, dynamic>> history = [
   {
-    'profileInitial':
-        Icon(Icons.account_balance_sharp),
-    'sourceName':'m-banking',
+    'profileInitial': Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Icon(Icons.account_balance_sharp),
+    ),
+    'sourceName': 'm-banking',
     'status': 'failed',
     'amount': '-Rp.250.000',
     'date': '12 Sep 2022, 12:12',
   },
   {
-    'profileInitial': Icon(Icons.store_mall_directory_sharp), // Already an Icon
+    'profileInitial': Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Icon(Icons.store_mall_directory_sharp),
+    ),
+    'sourceName': 'minimarket',
     'status': 'success',
     'amount': 'Rp.320.000',
     'date': '18 Aug 2021, 08:45',
   },
   {
-    'profileInitial': Icon(Icons.store_mall_directory_sharp),
+    'profileInitial': Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Icon(Icons.store_mall_directory_sharp),
+    ),
+    'sourceName': 'minimarket',
     'status': 'success',
     'amount': 'Rp.75.000',
     'date': '04 Jul 2020, 10:23',
   },
   {
-    'profileInitial': Icon(Icons.store_mall_directory_sharp),
+    'profileInitial': Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Icon(Icons.store_mall_directory_sharp),
+    ),
+    'sourceName': 'minimarket',
     'status': 'success',
     'amount': 'Rp.540.000',
     'date': '21 Oct 2023, 11:14',
   },
   {
-    'profileInitial':
-        CircleAvatar(radius: 15, child: Text('RW')), // This is CircleAvatar
+    'profileInitial': CircleAvatar(child: Text('RW')),
+    'sourceName': 'Ridwan Wowo',
     'status': 'success',
     'amount': '-Rp.99.000',
     'date': '30 Dec 2022, 09:38',
   },
   {
-    'profileInitial': Icon(Icons.store_mall_directory_sharp),
+    'profileInitial': Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Icon(Icons.store_mall_directory_sharp),
+    ),
+    'sourceName': 'minimarket',
     'status': 'success',
     'amount': 'Rp.450.000',
     'date': '15 May 2021, 14:50',
   },
   {
     'profileInitial': CircleAvatar(child: Text('ZY')),
+    'sourceName': 'zizy yesaya',
     'status': 'success',
     'amount': '-Rp.150.000',
     'date': '03 Jan 2020, 17:22',
   },
   {
-    'profileInitial': Icon(Icons.store_mall_directory_sharp),
+    'profileInitial': Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Icon(Icons.store_mall_directory_sharp),
+    ),
+    'sourceName': 'minimarket',
     'status': 'success',
     'amount': 'Rp.600.000',
     'date': '27 Jun 2023, 13:01',
   },
   {
-    'profileInitial': Icon(Icons.store_mall_directory_sharp),
+    'profileInitial': Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Icon(Icons.store_mall_directory_sharp),
+    ),
+    'sourceName': 'minimarket',
     'status': 'success',
     'amount': 'Rp.200.000',
     'date': '09 Nov 2021, 07:40',
   },
   {
     'profileInitial': CircleAvatar(child: Text('CP')),
+    'sourceName': 'Cipto Putren',
     'status': 'success',
     'amount': '-Rp.720.000',
     'date': '22 Feb 2023, 16:15',
   },
   {
-    'profileInitial': Icon(Icons.store_mall_directory_sharp),
+    'profileInitial': Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Icon(Icons.store_mall_directory_sharp),
+    ),
+    'sourceName': 'minimarket',
     'status': 'success',
     'amount': 'Rp.180.000',
     'date': '17 Apr 2020, 19:31',
   },
   {
-    'profileInitial': Icon(Icons.store_mall_directory_sharp),
+    'profileInitial': Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Icon(Icons.store_mall_directory_sharp),
+    ),
+    'sourceName': 'minimarket',
     'status': 'success',
     'amount': 'Rp.1.200.000',
     'date': '08 Sep 2022, 22:58',
   },
   {
-    'profileInitial': Icon(Icons.store_mall_directory_sharp),
+    'profileInitial': Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Icon(Icons.store_mall_directory_sharp),
+    ),
+    'sourceName': 'minimarket',
     'status': 'success',
     'amount': 'Rp.650.000',
     'date': '14 Aug 2021, 12:06',
   },
   {
-    'profileInitial': CircleAvatar(radius: 50, child: Text('PY')),
+    'profileInitial': CircleAvatar(child: Text('PY')),
+    'sourceName': 'papi yunus',
     'status': 'success',
     'amount': '-Rp.900.000',
     'date': '19 Mar 2023, 15:45',
   },
   {
-    'profileInitial': Icon(Icons.store_mall_directory_sharp),
+    'profileInitial': Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Icon(Icons.store_mall_directory_sharp),
+    ),
+    'sourceName': 'minimarket',
     'status': 'success',
     'amount': 'Rp.410.000',
     'date': '25 Oct 2020, 11:20',
   },
   {
     'profileInitial': CircleAvatar(child: Text('QW')),
+    'sourceName': 'Queen Widodo',
     'status': 'success',
     'amount': '-Rp.1.500.000',
     'date': '01 Dec 2023, 08:10',
   },
   {
-    'profileInitial': Icon(Icons.store_mall_directory_sharp),
+    'profileInitial': Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Icon(Icons.store_mall_directory_sharp),
+    ),
+    'sourceName': 'minimarket',
     'status': 'success',
     'amount': 'Rp.230.000',
     'date': '11 Jan 2019, 17:03',
   },
   {
     'profileInitial': CircleAvatar(child: Text('TR')),
+    'sourceName': 'Thomas Recing',
     'status': 'success',
     'amount': '-Rp.700.000',
     'date': '24 Sep 2020, 09:58',
   },
   {
-    'profileInitial': Icon(Icons.store_mall_directory_sharp),
+    'profileInitial': Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Icon(Icons.store_mall_directory_sharp),
+    ),
+    'sourceName': 'minimarket',
     'status': 'success',
     'amount': 'Rp.560.000',
     'date': '20 Feb 2023, 18:44',
   },
   {
     'profileInitial': CircleAvatar(child: Text('DS')),
+    'sourceName': 'Dwi syahputra',
     'status': 'failed',
     'amount': '-Rp.980.000',
     'date': '07 Jul 2021, 21:32',

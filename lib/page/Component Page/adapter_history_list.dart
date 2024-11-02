@@ -13,10 +13,11 @@ class AdapterListView extends StatelessWidget {
         margin: EdgeInsets.all(4),
         child: HistoryCard(
           leading: modelHistory.initial,
-          title: modelHistory.amount,
+          title: modelHistory.sourceName,
           subtitle: modelHistory.status,
           trailing: modelHistory.date,
-          onTap: () {}, amount: '',
+          amount: modelHistory.amount,
+          onTap: () {},
         ));
   }
 }

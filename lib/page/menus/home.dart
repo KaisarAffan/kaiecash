@@ -112,12 +112,13 @@ class _HomePageState extends State<HomeMenu> {
             ),
             SizedBox(height: 15),
             MyButton(
-              size: Size(130, 30),
+              width: 120,
               buttonText: "History",
               onPressed: () {
                 Get.toNamed(AppRoutes.historyPage);
-              },
+              }, backgroundColor: null,
             ),
+            
             SizedBox(height: 15),
             PromoBener(
               onTap: () {

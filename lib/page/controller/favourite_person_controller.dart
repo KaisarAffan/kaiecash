@@ -19,7 +19,7 @@ class FavouritePersonController extends GetxController {
     var databasePath = await getDatabasesPath();
     String path = join(databasePath, 'favouritePerson_database.db');
 
-    return await openDatabase(
+    return await openDatabase( 
       path,
       version: 1,
       onCreate: (db, version) async {
@@ -39,6 +39,7 @@ class FavouritePersonController extends GetxController {
   Future<int> addPerson(PersonModel task) async {
     var dbClient = await db;
     int result = await dbClient!.insert('favouritePerson', task.toMap());
+    print(result.toString());
     loadPerson();
     return result;
   }

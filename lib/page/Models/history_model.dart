@@ -1,15 +1,17 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ModelHistory {
-  final Icon icons;
+  final String date;
   final String status;
   final String amount;
-  final String initial;
+  final Widget initial;
+  final String sourceName;
 
   ModelHistory(
-    this.icons,
+    this.date,
     this.status,
     this.amount,
     this.initial,
+    this.sourceName,
   );
 }

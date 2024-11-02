@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kaiecash/page/Component%20Page/adapter_history.dart';
+import 'package:kaiecash/page/Component%20Page/adapter_history_list.dart';
 import 'package:kaiecash/page/Models/history_model.dart';
 import 'package:kaiecash/utils/all_data.dart';
 
@@ -23,10 +23,11 @@ class _ListHistoryState extends State<ListHistory> {
           return AdapterListView(
             key: ValueKey(index), // Provide a unique key for each item
             modelHistory: ModelHistory(
-                history[index]['icons'],
+                history[index]['date'],
                 history[index]['status'],
                 history[index]['amount'],
-                history[index]['profileInitial']),
+                history[index]['profileInitial'],
+                history[index]['sourceName']),
           );
         },
       ),

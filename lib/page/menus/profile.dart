@@ -36,12 +36,15 @@ class _ProfileMenuState extends State<ProfileMenu> {
               heading2: "enjoy all the benefits",
               icon: FluentSystemIcons.ic_fluent_lightbulb_filament_filled,
             ),
+            SizedBox(
+              height: 20,
+            ),
             MyButton(
               buttonText: "our Favourited",
-              size: Size(80, 30),
+              width: 126,
               onPressed: () {
                 Get.toNamed(AppRoutes.favouritedPersonListViewPage);
-              },
+              }, backgroundColor: null,
             ),
           ],
         ),

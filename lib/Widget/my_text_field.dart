@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 class MyTextField extends StatelessWidget {
   final TextEditingController textEditingController;
   final String labelText;
+  final InputBorder border;
   TextInputType? keyboardType;
 
   MyTextField(
       {super.key,
       required this.textEditingController,
       required this.labelText,
-      this.keyboardType});
+      this.keyboardType,
+      required this.border});
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +21,7 @@ class MyTextField extends StatelessWidget {
         controller: textEditingController,
         decoration: InputDecoration(
           labelText: labelText,
+          border: border,
         ),
         keyboardType: keyboardType,
       ),

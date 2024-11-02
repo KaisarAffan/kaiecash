@@ -48,6 +48,11 @@ class BalanceCard extends StatelessWidget {
                 rekening,
                 style: TextStyle(fontSize: 12, color: textColor),
               ),
+              Spacer(),
+              Icon(
+                Icons.arrow_forward_ios,
+                size: 18,
+              )
             ],
           ),
           Divider(color: Colors.grey[400], height: 20),

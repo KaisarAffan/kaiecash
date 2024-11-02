@@ -57,10 +57,81 @@ class HistoryCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Text(amount),
-          Text(subtitle, style: TextStyle(color: Colors.pink)),
+          Text(subtitle,
+              style: TextStyle(
+                color: subtitle == 'failed' ? Colors.pink : Colors.green,
+              )),
         ],
       ),
       onTap: onTap,
+    );
+  }
+}
+
+class HistoryGrid extends StatelessWidget {
+  final Widget leading; // Icon or CircleAvatar
+  final String title;
+  final String subtitle;
+  final String amount;
+  final String trailing;
+  final VoidCallback onTap;
+
+  const HistoryGrid({
+    Key? key,
+    required this.leading,
+    required this.title,
+    required this.subtitle,
+    required this.trailing,
+    required this.onTap,
+    required this.amount,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        elevation: 2,
+        margin: EdgeInsets.all(8.0),
+        child: Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: 40,
+                height: 40,
+                child: leading,
+              ),
+              SizedBox(height: 8),
+              Text(
+                title,
+                style: TextStyle(fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 4),
+              Text(
+                amount,
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 4),
+              Text(
+                subtitle,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  color: subtitle == 'failed' ? Colors.red : Colors.green,
+                ),
+              ),
+              SizedBox(height: 4),
+              Text(
+                trailing,
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

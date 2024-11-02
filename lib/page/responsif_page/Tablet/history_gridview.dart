@@ -17,11 +17,17 @@ class _GridHistoryState extends State<GridHistory> {
       appBar: AppBar(
         title: const Text("History"),
       ),
-      body: ListView.builder(
-        itemCount: 2,
+      body: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          mainAxisSpacing: 8,
+          crossAxisSpacing: 8,
+          childAspectRatio: 0.75,
+        ),
+        itemCount: history.length,
         itemBuilder: (context, index) {
           return AdapterGridView(
-            key: ValueKey(index), // Provide a unique key for each item
+            key: ValueKey(index),
             modelHistory: ModelHistory(
                 history[index]['date'],
                 history[index]['status'],

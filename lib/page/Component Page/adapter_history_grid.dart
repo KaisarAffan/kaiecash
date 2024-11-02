@@ -11,6 +11,13 @@ class AdapterGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         margin: EdgeInsets.all(4),
-        child: Text("a"));
+        child: HistoryGrid(
+          leading: modelHistory.initial,
+          title: modelHistory.sourceName,
+          subtitle: modelHistory.status,
+          trailing: modelHistory.date,
+          amount: modelHistory.amount,
+          onTap: () {},
+        ));
   }
 }

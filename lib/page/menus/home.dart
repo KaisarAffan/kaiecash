@@ -34,7 +34,7 @@ class _HomePageState extends State<HomeMenu> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(20, 82, 0, 26),
+              padding: const EdgeInsets.fromLTRB(20, 50, 0, 26),
               child: Row(
                 children: [
                   Container(
@@ -99,18 +99,26 @@ class _HomePageState extends State<HomeMenu> {
                       },
                       icons: Icons.arrow_upward,
                     ),
+                    MenuButton(
+                      text: "Favourite",
+                      onTap: () {
+                        Get.toNamed(AppRoutes.favouritePage);
+                      },
+                      icons: Icons.star_border,
+                    ),
                   ],
                 ),
               ),
             ),
             SizedBox(height: 15),
             MyButton(
-              size: Size(130, 30),
+              width: 120,
               buttonText: "History",
               onPressed: () {
                 Get.toNamed(AppRoutes.historyPage);
-              },
+              }, backgroundColor: null,
             ),
+            
             SizedBox(height: 15),
             PromoBener(
               onTap: () {

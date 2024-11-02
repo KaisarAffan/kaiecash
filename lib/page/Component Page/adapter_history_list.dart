@@ -11,8 +11,13 @@ class AdapterListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         margin: EdgeInsets.all(4),
-        child: ListCard(
-          modelHistory: modelHistory,
+        child: HistoryCard(
+          leading: modelHistory.initial,
+          title: modelHistory.sourceName,
+          subtitle: modelHistory.status,
+          trailing: modelHistory.date,
+          amount: modelHistory.amount,
+          onTap: () {},
         ));
   }
 }

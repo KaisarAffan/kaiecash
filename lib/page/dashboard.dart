@@ -20,7 +20,7 @@ class DashboardPage extends StatelessWidget {
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: dashboardController.selectedIndex.value,
             selectedItemColor: textColor,
-            unselectedItemColor: secondaryColor,
+            unselectedItemColor: menuColor,
             onTap: dashboardController.changeMenu,
             items: [
               BottomNavigationBarItem(icon: (Icon(Icons.home)), label: "home"),

@@ -4,27 +4,46 @@ import 'package:kaiecash/Widget/colors.dart';
 class MyButton extends StatelessWidget {
   final String buttonText;
   final VoidCallback onPressed;
-  final Size size;
-  const MyButton({
+  final double width;
+  OutlinedBorder? border;
+  IconData? icon;
+  MyButton({
     super.key,
     required this.buttonText,
-    required this.size,
+    required this.width,
     required this.onPressed,
+    this.border,
+    this.icon, required backgroundColor,
   });
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
+    return SizedBox(
+      width: width,
+      child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: secondaryColor,
-          minimumSize: size,
+          shape: border,
         ),
-        child: Text(
-          buttonText,
-          style: TextStyle(
-              fontWeight: FontWeight.normal, fontSize: 12, color: textColor),
-        ));
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (icon != null) Icon(icon),
+            if (icon != null && buttonText.isNotEmpty) const SizedBox(width: 8),
+            if (buttonText.isNotEmpty)
+              Text(
+                buttonText,
+                style: TextStyle(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 12,
+                  color: textColor,
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
   }
 }
 

@@ -30,23 +30,27 @@ class _PaymentPageState extends State<PaymentPage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              padding: const EdgeInsets.fromLTRB(25, 130, 25, 25),
               child: TextField(
                 controller: textEditingController,
                 decoration: InputDecoration(
                   labelText: 'Enter amount',
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                  ),
                 ),
                 keyboardType: TextInputType.number,
               ),
             ),
             MyDropdown(dropdownItems: dropdownItems),
-            Spacer(),
+            SizedBox(
+              height: 70,
+            ),
             Padding(
               padding: const EdgeInsets.only(bottom: 10.0),
               child: MyButton(
                 buttonText: method,
-                size: Size(320, 40),
+                width: 160,
                 onPressed: () {
                   int? value = int.tryParse(textEditingController.text);
                   if (value != null) {
@@ -59,7 +63,7 @@ class _PaymentPageState extends State<PaymentPage> {
                   } else {
                     Get.snackbar("Error", "Please enter a valid number");
                   }
-                },
+                }, backgroundColor: null,
               ),
             )
           ],
